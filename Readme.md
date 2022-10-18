@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов (простой)»
 
-* Студент: [Нина Лукашенко](https://up.htmlacademy.ru/react/11/user/1544109).
-* Наставник: `Неизвестно`.
+* Студент: [Nina Lukashenko](https://up.htmlacademy.ru/react/11/user/1544109).
+* Наставник: [Надежда Комарицкая](https://htmlacademy.ru/profile/id644051).
 
 ---
 
