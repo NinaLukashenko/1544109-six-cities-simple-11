@@ -1,12 +1,14 @@
-import Place from '../../components/place/place';
-import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
+import Logo from '../../components/logo/logo';
+import OfferList from '../../components/offer-list/offer-list';
+import { Offers } from '../../types/offers';
 
 type MainProps = {
   placesCount: number;
+  offers: Offers;
 }
 
-const Main = ({ placesCount }: MainProps): JSX.Element => (
+const Main = ({ placesCount, offers }: MainProps): JSX.Element => (
   <div className="page page--gray page--main">
     <Helmet>
       <title>6 Cities. Places</title>
@@ -94,13 +96,7 @@ const Main = ({ placesCount }: MainProps): JSX.Element => (
                 <li className="places__option" tabIndex={0}>Top rated first</li>
               </ul>
             </form>
-            <div className="cities__places-list places__list tabs__content">
-              <Place />
-              <Place />
-              <Place />
-              <Place />
-              <Place />
-            </div>
+            <OfferList offers={offers}/>
           </section>
           <div className="cities__right-section">
             <section className="cities__map map"></section>
