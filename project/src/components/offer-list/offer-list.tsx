@@ -18,16 +18,20 @@ const OfferList = ({ offers }: OfferListProps): JSX.Element => {
   };
 
   return (
-    <div className="cities__places-list places__list tabs__content">
-      {offers.map((item) => (
-        <Place
-          key={item.id}
-          place={item}
-          onHover={handleCardHover}
-          onUnhover={handleCardUnhover}
-        />
-      ))}
-    </div>
+    //TODO: remove block with activeCard from JSX.Element
+    <>
+      <div className="cities__places-list places__list tabs__content">
+        {offers.map((item) => (
+          <Place
+            key={item.id}
+            place={item}
+            onHover={handleCardHover}
+            onUnhover={handleCardUnhover}
+          />
+        ))}
+      </div>
+      {false && activeCard}
+    </>
   );
 };
 
