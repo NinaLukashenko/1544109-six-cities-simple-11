@@ -1,44 +1,7 @@
 import { OfferType } from '../consts/const';
-import { City, Offers } from '../types/offers';
+import { Offers } from '../types/offers';
 
-export const offers: Offers = [
-  {
-    bedrooms: 3,
-    city: {
-      location: {
-        latitude: 52.370216,
-        longitude: 4.895168,
-        zoom: 10
-      },
-      name: 'Amsterdam'
-    },
-    description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    goods: [
-      'Heating'
-    ],
-    host: {
-      avatarUrl: 'img/avatar-angelina.jpg',
-      id: 3,
-      isPro: true,
-      name: 'Angelina'
-    },
-    id: 1,
-    images: [
-      'img/apartment-01.jpg'
-    ],
-    isPremium: true,
-    location: {
-      latitude: 52.3909553943508,
-      longitude: 4.85309666406198,
-      zoom: 8
-    },
-    maxAdults: 4,
-    previewImage: 'img/apartment-01.jpg',
-    price: 120,
-    rating: 4.8,
-    title: 'Beautiful & luxurious studio at great location',
-    type: OfferType.Apartment,
-  },
+export const offersNearby: Offers = [
   {
     bedrooms: 3,
     city: {
@@ -151,12 +114,3 @@ export const offers: Offers = [
     type: OfferType.Apartment,
   },
 ];
-
-export const currentCity: City = {
-  location: {
-    latitude: 52.370216,
-    longitude: 4.895168,
-    zoom: 10
-  },
-  name: 'Amsterdam'
-};

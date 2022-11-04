@@ -1,4 +1,4 @@
-import { OfferType } from '../const';
+import { OfferType } from '../consts/const';
 
 export type Location = {
   latitude: number;

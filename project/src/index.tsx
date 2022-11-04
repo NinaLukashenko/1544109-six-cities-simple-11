@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import { offers } from './mocks/offers';
+import { offers, currentCity } from './mocks/offers';
 
 enum Setting {
   PlacesCount = 310,
@@ -16,6 +16,7 @@ root.render(
     <App
       placesCount={Setting.PlacesCount}
       offers={offers}
+      currentCity={currentCity}
     />
   </React.StrictMode>,
 );
