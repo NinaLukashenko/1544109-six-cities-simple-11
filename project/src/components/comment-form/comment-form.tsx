@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { StarRating } from '../../const';
+import { StarRating } from '../../consts/const';
 
 export const CommentForm = (): JSX.Element => {
   const [formData, setFormData] = useState({
