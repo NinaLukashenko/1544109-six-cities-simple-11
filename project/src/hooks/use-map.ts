@@ -33,7 +33,8 @@ const useMap = (
       setMap(instance);
       isRenderedRef.current = true;
     }
-  }, [mapRef, city]);
+    map?.setView([city.location.latitude, city.location.longitude], city.location.zoom);
+  }, [mapRef, city, map]);
 
   return map;
 };
