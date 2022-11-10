@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../../consts/const';
+import { AppRoute } from '../../consts/app';
 import { Offer } from '../../types/offers';
 import { getRatePercent, setFirstLetterUpper } from '../../utils/utils';
 

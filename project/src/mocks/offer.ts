@@ -1,4 +1,5 @@
-import { OfferType } from '../consts/const';
+import { CityName } from '../consts/city';
+import { OfferType } from '../consts/offer';
 import { Offer } from '../types/offers';
 
 export const offer: Offer = {
@@ -9,7 +10,7 @@ export const offer: Offer = {
       longitude: 4.895168,
       zoom: 10
     },
-    name: 'Amsterdam'
+    name: CityName.Amsterdam
   },
   description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
   goods: [

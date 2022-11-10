@@ -1,4 +1,5 @@
-import { OfferType } from '../consts/const';
+import { CityName } from '../consts/city';
+import { OfferType } from '../consts/offer';
 import { Offers } from '../types/offers';
 
 export const offersNearby: Offers = [
@@ -10,7 +11,7 @@ export const offersNearby: Offers = [
         longitude: 4.895168,
         zoom: 10
       },
-      name: 'Amsterdam'
+      name: CityName.Amsterdam
     },
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     goods: [
@@ -47,7 +48,7 @@ export const offersNearby: Offers = [
         longitude: 4.895168,
         zoom: 10
       },
-      name: 'Amsterdam'
+      name: CityName.Amsterdam
     },
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     goods: [
@@ -84,7 +85,7 @@ export const offersNearby: Offers = [
         longitude: 4.895168,
         zoom: 10
       },
-      name: 'Amsterdam'
+      name: CityName.Amsterdam
     },
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     goods: [

@@ -1,8 +1,8 @@
 import { Icon, Marker } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useRef } from 'react';
-import { MAP_MARKER } from '../../consts/const';
-import useMap from '../../hooks/useMap';
+import { MAP_MARKER } from '../../consts/map';
+import useMap from '../../hooks/use-map';
 import { Nullable } from '../../types/utils';
 import { City, Offer, Offers } from '../../types/offers';
 

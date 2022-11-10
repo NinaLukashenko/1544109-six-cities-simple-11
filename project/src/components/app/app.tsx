@@ -1,26 +1,28 @@
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PrivateRoute from '../../components/private-route/private-route';
-import { AppRoute, AuthorizationStatus } from '../../consts/const';
+import { AppRoute, AuthorizationStatus } from '../../consts/app';
 import Login from '../../pages/login/login';
 import Main from '../../pages/main/main';
 import NotFound from '../../pages/not-found/not-found';
 import Room from '../../pages/room/room';
-import { City, Offers } from '../../types/offers';
+import {Cities } from '../../types/city';
 
 type AppProps = {
-  placesCount: number;
-  offers: Offers;
-  currentCity: City;
+  cities: Cities;
 }
 
-const App = ({ placesCount, offers, currentCity }: AppProps): JSX.Element => (
+const App = ({ cities }: AppProps): JSX.Element => (
   <HelmetProvider>
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<Main placesCount={placesCount} offers={offers} currentCity={currentCity}/>}
+          element={
+            <Main
+              cities={cities}
+            />
+          }
         />
         <Route
           path={AppRoute.Login}
