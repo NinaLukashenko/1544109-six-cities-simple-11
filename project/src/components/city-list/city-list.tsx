@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react';
 import { CityName } from '../../consts/city';
 import { useAppDispatch } from '../../hooks';
-import { changeCity } from '../../store/action';
+import { changeCity } from '../../store/actions';
 import { Cities } from '../../types/city';
 import { City } from '../../types/offers';
 
