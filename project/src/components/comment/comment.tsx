@@ -1,5 +1,5 @@
 import { Review } from '../../types/reviews';
-import { getRatePercent } from '../../utils/utils';
+import { getMachineReadableDate, getMonthNameAndYear, getRatePercent } from '../../utils/utils';
 
 type CommentProps = {
   comment: Review;
@@ -25,7 +25,12 @@ const Comment = ({comment}: CommentProps) => (
       <p className="reviews__text">
         {comment.comment}
       </p>
-      <time className="reviews__time" dateTime="2019-04-24">{comment.date}</time>
+      <time
+        className="reviews__time"
+        dateTime={getMachineReadableDate(comment.date)}
+      >
+        {getMonthNameAndYear(comment.date)}
+      </time>
     </div>
   </li>
 );

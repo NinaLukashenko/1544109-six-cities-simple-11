@@ -1,7 +1,7 @@
 import { MouseEvent, useState } from 'react';
 import { SortOption, sortOptions } from '../../consts/sort';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { changeSortOption } from '../../store/action';
+import { changeSortOption } from '../../store/actions';
 
 const Sort = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
