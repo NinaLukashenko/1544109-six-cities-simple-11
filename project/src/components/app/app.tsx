@@ -8,7 +8,7 @@ import Login from '../../pages/login/login';
 import Main from '../../pages/main/main';
 import NotFound from '../../pages/not-found/not-found';
 import Room from '../../pages/room/room';
-import { getIsLoading, getOffers } from '../../store/offers-data/selectors';
+import { getIsLoading } from '../../store/offers-data/selectors';
 import { getAuthorizationStatus } from '../../store/user-process/selectors';
 import { Cities } from '../../types/city';
 import HistoryRouter from '../history-route/history-route';
