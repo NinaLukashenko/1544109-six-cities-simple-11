@@ -1,12 +1,13 @@
-import { MouseEvent, useState } from 'react';
+import { memo, MouseEvent, useState } from 'react';
 import { SortOption, sortOptions } from '../../consts/sort';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { changeSortOption } from '../../store/actions';
+import { changeSortOption } from '../../store/offers-data/offers-data';
+import { getSort } from '../../store/offers-data/selectors';
 
 const Sort = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const selectedOption = useAppSelector((state) => state.sort);
+  const selectedOption = useAppSelector(getSort);
 
   const dispatch = useAppDispatch();
 
@@ -48,4 +49,4 @@ const Sort = (): JSX.Element => {
   );
 };
 
-export default Sort;
+export default memo(Sort);
