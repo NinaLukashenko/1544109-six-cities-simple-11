@@ -1,4 +1,4 @@
-import { StarRating } from '../consts/offer';
+import { StarRateValue } from '../consts/offer';
 import { Consumer } from './offers';
 
 export type Review = {
@@ -14,5 +14,14 @@ export type Reviews = Review[];
 export type ReviewData = {
   hotelId: number;
   review: string;
-  rating: StarRating;
+  rating: StarRateValue;
 }
+
+type StarRateText = 'perfect' | 'good' | 'not bad' | 'badly' | 'terribly' | 'none';
+
+export type StarRate = {
+  value: StarRateValue;
+  title: StarRateText;
+};
+
+export type StarRates = StarRate[];

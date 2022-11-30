@@ -5,3 +5,9 @@ export enum APIRoute {
   Comments = '/comments',
   Nearby = '/nearby',
 }
+
+export enum NameSpace {
+  User = 'USER',
+  Offers = 'OFFERS',
+  CurrentOffer = 'CURRENT_OFFER',
+}

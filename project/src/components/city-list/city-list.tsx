@@ -1,16 +1,12 @@
 import { MouseEvent } from 'react';
-import { CityName } from '../../consts/city';
-import { useAppDispatch } from '../../hooks';
-import { changeCity } from '../../store/actions';
-import { Cities } from '../../types/city';
+import { cities, CityName } from '../../consts/city';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { changeCity } from '../../store/offers-data/offers-data';
+import { getCity } from '../../store/offers-data/selectors';
 import { City } from '../../types/offers';
 
-type CityListProps = {
-  cities: Cities;
-  currentCity: City;
-}
-
-const CityList = ({ cities, currentCity }: CityListProps): JSX.Element => {
+const CityList = (): JSX.Element => {
+  const currentCity = useAppSelector(getCity);
   const dispatch = useAppDispatch();
 
   const handleLocationChange = (evt: MouseEvent<HTMLAnchorElement>) => {

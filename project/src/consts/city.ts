@@ -62,3 +62,5 @@ export const cities: City[] = [
 
 export const DEFAULT_CITY_INDEX = 0;
 export const DEFAULT_CITY = cities[DEFAULT_CITY_INDEX];
+
+export const LAST_CITY_INDEX = cities.length - 1;

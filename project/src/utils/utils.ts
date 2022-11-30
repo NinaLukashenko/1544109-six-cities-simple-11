@@ -1,6 +1,6 @@
 import { MAX_RATE_PERCENT, MAX_RATE_POINTS } from '../consts/app';
 import { months } from '../consts/date';
-import { StarRating } from '../consts/offer';
+import { StarRateValue } from '../consts/offer';
 
 export const getRatePercent = (rate: number): number => Math.round(rate) * MAX_RATE_PERCENT / MAX_RATE_POINTS;
 
@@ -8,7 +8,7 @@ export const setFirstLetterUpper = (text: string): string => text.charAt(0).toLo
 
 export const isNotEmpty = (text: string): boolean => text !== '' && text.trim() !== '';
 
-export const isRated = (rating: number): boolean => rating !== StarRating.None;
+export const isRated = (rating: number): boolean => rating !== StarRateValue.None;
 
 export const isCommentLengthCorrect = (text: string): boolean => text.length >= 50 && text.length <= 300;
 
@@ -37,3 +37,5 @@ export const getMachineReadableDate = (date: string): string => {
 
   return `${year}-${month}-${day}`;
 };
+
+export const getRandomNumber = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1)) + min;

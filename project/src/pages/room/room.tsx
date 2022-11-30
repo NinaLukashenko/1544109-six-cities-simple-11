@@ -1,28 +1,28 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router';
-import { CommentForm } from '../../components/comment-form/comment-form';
-import CommentList from '../../components/comment-list/comment-list';
 import Header from '../../components/header/header';
 import Loader from '../../components/loader/loader';
 import Map from '../../components/map/map';
 import NearbyOfferList from '../../components/nearby-offer-list/nearby-offer-list';
+import Reviews from '../../components/reviews/reviews';
 import { AuthorizationStatus } from '../../consts/app';
 import { FIRST_OFFER_IMAGE_INDEX, OFFER_IMAGES_MAX_QUANTITY } from '../../consts/offer';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { fetchCommentsAction, fetchOfferByIdAction, fetchOffersNearbyAction } from '../../store/api-actions';
+import { getIsLoading, getOffer, getOffersNearby } from '../../store/current-offer-data/selectors';
+import { getAuthorizationStatus } from '../../store/user-process/selectors';
 import { getRatePercent, setFirstLetterUpper } from '../../utils/utils';
 import NotFound from '../not-found/not-found';
 
 const Room = (): JSX.Element => {
   const { id } = useParams();
 
-  const authStatus = useAppSelector((state) => state.authorizationStatus);
-  const isOfferLoading = useAppSelector((state) => state.isCurrentOfferLoading);
+  const authStatus = useAppSelector(getAuthorizationStatus);
+  const isOfferLoading = useAppSelector(getIsLoading);
 
-  const room = useAppSelector((state) => state.currentOffer);
-  const reviews = useAppSelector((state) => state.comments);
-  const offersNearby = useAppSelector((state) => state.offersNearby);
+  const room = useAppSelector(getOffer);
+  const offersNearby = useAppSelector(getOffersNearby);
 
   const dispatch = useAppDispatch();
 
@@ -124,11 +124,7 @@ const Room = (): JSX.Element => {
                   </p>
                 </div>
               </div>
-              <section className="property__reviews reviews">
-                <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
-                <CommentList comments={reviews} />
-                {authStatus === AuthorizationStatus.Auth && <CommentForm hotelId={Number(id)}/>}
-              </section>
+              <Reviews hotelId={Number(id)} className='property__reviews'/>
             </div>
           </div>
           <section className="property__map map">
@@ -142,7 +138,7 @@ const Room = (): JSX.Element => {
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
-            <NearbyOfferList offers={offersNearby} />
+            <NearbyOfferList/>
           </section>
         </div>
       </main>
