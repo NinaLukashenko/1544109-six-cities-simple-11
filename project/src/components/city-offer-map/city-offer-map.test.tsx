@@ -10,7 +10,7 @@ const mockHoveredOffer = mockPoints[0];
 
 const mockStore = configureMockStore();
 const store = mockStore({
-  CURRENT_OFFER: {
+  OFFERS: {
     hoveredOffer: mockHoveredOffer,
   },
 });
