@@ -6,7 +6,7 @@ type NearbyPlaceProps = {
 }
 
 const NearbyPlace = (props: NearbyPlaceProps): JSX.Element => (
-  <Place className='near-places__card' {...props} />
+  <Place className='near-places__card' {...props}/>
 );
 
 export default NearbyPlace;

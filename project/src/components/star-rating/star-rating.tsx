@@ -26,8 +26,14 @@ export const StarRating = ({ value, title, isChecked, isDisabled, onRateChange }
         pointerEvents: isDisabled ? 'none' : 'auto'
       }}
       title={title}
+      data-testid="label"
     >
-      <svg className="form__star-image" width="37" height="33">
+      <svg
+        className="form__star-image"
+        width="37"
+        height="33"
+        data-testid="image"
+      >
         <use xlinkHref="#icon-star"></use>
       </svg>
     </label>

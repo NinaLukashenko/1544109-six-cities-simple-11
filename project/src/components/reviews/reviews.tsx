@@ -2,7 +2,7 @@ import { AuthorizationStatus } from '../../consts/app';
 import { useAppSelector } from '../../hooks';
 import { getComments } from '../../store/current-offer-data/selectors';
 import { getAuthorizationStatus } from '../../store/user-process/selectors';
-import { CommentForm } from '../comment-form/comment-form';
+import CommentForm from '../comment-form/comment-form';
 import CommentList from '../comment-list/comment-list';
 
 type ReviewsProps = {

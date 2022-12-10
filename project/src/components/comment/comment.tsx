@@ -18,7 +18,7 @@ const Comment = ({comment}: CommentProps) => (
     <div className="reviews__info">
       <div className="reviews__rating rating">
         <div className="reviews__stars rating__stars">
-          <span style={{ width: `${getRatePercent(comment.rating)}%` }}></span>
+          <span style={{ width: `${getRatePercent(comment.rating)}%` }} data-testid="rate"></span>
           <span className="visually-hidden">Rating</span>
         </div>
       </div>
@@ -28,6 +28,7 @@ const Comment = ({comment}: CommentProps) => (
       <time
         className="reviews__time"
         dateTime={getMachineReadableDate(comment.date)}
+        data-testid="time"
       >
         {getMonthNameAndYear(comment.date)}
       </time>

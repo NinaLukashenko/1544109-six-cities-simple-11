@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router-dom';
-import { AppRoute } from '../../consts/app';
+import { AppRoute, AuthorizationStatus } from '../../consts/app';
 import { useAppSelector } from '../../hooks';
 import { getAuthorizationStatus, getUser } from '../../store/user-process/selectors';
-import HeaderNavAuth from '../header-nav-auth/header-nav-auth';
-import HeaderNavNotAuth from '../header-nav-not-auth/header-nav-not-auth';
+import NavAuth from '../nav-auth/nav-auth';
+import NavNotAuth from '../nav-not-auth/nav-not-auth';
 import Logo from '../logo/logo';
 
 const Header = (): JSX.Element => {
@@ -21,9 +21,9 @@ const Header = (): JSX.Element => {
           <div className="header__left">
             <Logo className={classes} />
           </div>
-          { authorizationStatus && user
-            ? <HeaderNavAuth user={user}/>
-            : <HeaderNavNotAuth />}
+          { authorizationStatus === AuthorizationStatus.Auth && user
+            ? <NavAuth user={user}/>
+            : <NavNotAuth />}
         </div>
       </div>
     </header>

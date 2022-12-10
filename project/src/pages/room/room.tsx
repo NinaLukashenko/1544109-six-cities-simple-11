@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router';
 import Header from '../../components/header/header';
-import Loader from '../../components/loader/loader';
+import Loader from '../loader/loader';
 import Map from '../../components/map/map';
 import NearbyOfferList from '../../components/nearby-offer-list/nearby-offer-list';
 import Reviews from '../../components/reviews/reviews';
@@ -62,7 +62,7 @@ const Room = (): JSX.Element => {
           <div className="property__container container">
             <div className="property__wrapper">
               {room.isPremium && (
-                <div className="property__mark">
+                <div className="property__mark" data-testid="premium">
                   <span>Premium</span>
                 </div>
               )}
@@ -73,7 +73,7 @@ const Room = (): JSX.Element => {
               </div>
               <div className="property__rating rating">
                 <div className="property__stars rating__stars">
-                  <span style={{ width: `${getRatePercent(room.rating)}%` }}></span>
+                  <span style={{ width: `${getRatePercent(room.rating)}%` }} data-testid="room-rating"></span>
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="property__rating-value rating__value">{room.rating}</span>
@@ -97,7 +97,7 @@ const Room = (): JSX.Element => {
                 <h2 className="property__inside-title">What&apos;s inside</h2>
                 <ul className="property__inside-list">
                   {room.goods.map((good) => (
-                    <li key={good} className="property__inside-item">
+                    <li key={good} className="property__inside-item" data-testid="inside-item">
                       {good}
                     </li>
                   ))}

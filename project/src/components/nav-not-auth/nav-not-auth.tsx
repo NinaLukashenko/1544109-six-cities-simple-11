@@ -3,7 +3,7 @@ import { MouseEvent } from 'react';
 import { AppRoute } from '../../consts/app';
 import { redirectToRoute } from '../../store/actions';
 
-const HeaderNavNotAuth = (): JSX.Element => {
+const NavNotAuth = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const handleSigninClick = (evt: MouseEvent<HTMLAnchorElement>) => {
@@ -19,6 +19,7 @@ const HeaderNavNotAuth = (): JSX.Element => {
             className="header__nav-link header__nav-link--profile"
             href="#"
             onClick={handleSigninClick}
+            data-testid="sign-in"
           >
             <div className="header__avatar-wrapper user__avatar-wrapper"></div>
             <span className="header__login">Sign in</span>
@@ -29,4 +30,4 @@ const HeaderNavNotAuth = (): JSX.Element => {
   );
 };
 
-export default HeaderNavNotAuth;
+export default NavNotAuth;

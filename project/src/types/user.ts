@@ -1,4 +1,4 @@
-export type User = {
+export type AuthUser = {
   avatarUrl: string;
   id: number;
   isPro: boolean;

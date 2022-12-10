@@ -11,7 +11,7 @@ type CommentFormProps = {
   hotelId: number;
 }
 
-export const CommentForm = ({ hotelId }: CommentFormProps): JSX.Element => {
+const CommentForm = ({ hotelId }: CommentFormProps): JSX.Element => {
   const [rating, setRating] = useState(StarRateValue.None);
   const [review, setReview] = useState('');
 
@@ -63,6 +63,7 @@ export const CommentForm = ({ hotelId }: CommentFormProps): JSX.Element => {
       className="reviews__form form"
       action="#"
       method="post"
+      data-testid="form"
       onSubmit={handleFormSubmit}
     >
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
@@ -94,3 +95,5 @@ export const CommentForm = ({ hotelId }: CommentFormProps): JSX.Element => {
     </form>
   );
 };
+
+export default CommentForm;

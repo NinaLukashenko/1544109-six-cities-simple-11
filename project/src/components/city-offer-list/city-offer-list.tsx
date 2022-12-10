@@ -60,7 +60,7 @@ const CityOfferList = ({ offers }: CityOfferListProps): JSX.Element => {
   };
 
   return (
-    <div className='cities__places-list places__list tabs__content'>
+    <div className='cities__places-list places__list tabs__content' data-testid="places-list">
       {sortedOffers.map((offer) => (
         <CityPlace key={offer.id} place={offer} onHover={onOfferHover} onUnhover={onOfferUnhover} />
       ))}

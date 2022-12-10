@@ -4,13 +4,8 @@ import CityOffers from '../../components/city-offers/city-offers';
 import Header from '../../components/header/header';
 import { useAppSelector } from '../../hooks';
 import { getCity, getOffers } from '../../store/offers-data/selectors';
-import { Cities } from '../../types/city';
 
-type MainProps = {
-  cities: Cities;
-}
-
-const Main = ({ cities }: MainProps): JSX.Element => {
+const Main = (): JSX.Element => {
   const currentCity = useAppSelector(getCity);
 
   const offers = useAppSelector(getOffers);
