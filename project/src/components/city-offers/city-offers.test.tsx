@@ -16,7 +16,7 @@ const mockCity = DEFAULT_CITY;
 
 const history = createMemoryHistory();
 
-describe('Component: CityOfferList', () => {
+describe('Component: CityOffers', () => {
   it('should render correctly if there are some offers in the current city', () => {
     const mockStoreData = {
       OFFERS: {

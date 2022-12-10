@@ -1,7 +1,9 @@
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { render, screen } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import { makeFakeOffers } from '../../utils/mocks';
+import HistoryRouter from '../history-route/history-route';
 import NearbyOfferList from './nearby-offer-list';
 
 const mockStore = configureMockStore();
@@ -14,11 +16,15 @@ const store = mockStore({
   }
 });
 
-describe('Component: CityOfferList', () => {
+const history = createMemoryHistory();
+
+describe('Component: NearbyCityOfferList', () => {
   it('should render correctly', () => {
     render(
       <Provider store={store}>
-        <NearbyOfferList />
+        <HistoryRouter history={history}>
+          <NearbyOfferList />
+        </HistoryRouter>
       </Provider>
     );
 
