@@ -35,10 +35,10 @@ describe('Component: LoginForm', () => {
     );
 
     await userEvent.type(screen.getByTestId('email'), 'test@test.com');
-    await userEvent.type(screen.getByTestId('password'), '123');
+    await userEvent.type(screen.getByTestId('password'), '123abc');
 
     expect(screen.getByDisplayValue(/test@test.com/i)).toBeInTheDocument();
-    expect(screen.getByDisplayValue(/123/i)).toBeInTheDocument();
+    expect(screen.getByDisplayValue(/123abc/i)).toBeInTheDocument();
   });
 
   it('handleFormSubmit should be called when user click Sign in button', async ()=> {
@@ -53,7 +53,7 @@ describe('Component: LoginForm', () => {
     expect(store.getActions()).toEqual([]);
 
     await userEvent.type(screen.getByTestId('email'), 'test@test.com');
-    await userEvent.type(screen.getByTestId('password'), '123');
+    await userEvent.type(screen.getByTestId('password'), '123abc');
 
     await userEvent.click(screen.getByTestId('button'));
 
