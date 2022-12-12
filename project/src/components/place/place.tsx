@@ -30,7 +30,7 @@ const Place = ({ place, className = '', onHover, onUnhover }: PlaceProps): JSX.E
           <span>Premium</span>
         </div>)}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`${AppRoute.Room}/${place.id}`}>
+        <Link to={`${AppRoute.Room}/${place.id}`} data-testid="place-image">
           <img className="place-card__image" src={place.previewImage} width="260" height="200" alt={place.title} />
         </Link>
       </div>
@@ -44,12 +44,12 @@ const Place = ({ place, className = '', onHover, onUnhover }: PlaceProps): JSX.E
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: `${getRatePercent(place.rating)}%` }}></span>
+            <span style={{ width: `${getRatePercent(place.rating)}%` }} data-testid="rating"></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`${AppRoute.Room}/${place.id}`}>{place.title}</Link>
+          <Link to={`${AppRoute.Room}/${place.id}`} data-testid="place-title">{place.title}</Link>
         </h2>
         <p className="place-card__type">{setFirstLetterUpper(place.type)}</p>
       </div>

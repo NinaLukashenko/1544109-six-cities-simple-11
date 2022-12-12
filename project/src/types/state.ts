@@ -3,12 +3,12 @@ import { SortOption } from '../consts/sort';
 import { store } from '../store/index';
 import { City, Offer, Offers } from './offers';
 import { Reviews } from './reviews';
-import { User } from './user';
+import { AuthUser } from './user';
 import { Nullable } from './utils';
 
 export type UserProcess = {
   authorizationStatus: AuthorizationStatus;
-  user: Nullable<User>;
+  user: Nullable<AuthUser>;
 };
 
 export type OffersData = {

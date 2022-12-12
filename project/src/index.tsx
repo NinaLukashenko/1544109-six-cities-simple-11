@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import App from './components/app/app';
-import { cities } from './consts/city';
 import { store } from './store';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { checkAuthAction, fetchOffersAction } from './store/api-actions';
+import HistoryRouter from './components/history-route/history-route';
+import browserHistory from './browser-history';
 
 store.dispatch(fetchOffersAction());
 store.dispatch(checkAuthAction());
@@ -19,10 +20,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToastContainer />
-      <App
-        cities={cities}
-      />
+      <HistoryRouter history={browserHistory}>
+        <ToastContainer />
+        <App />
+      </HistoryRouter>
     </Provider>
   </React.StrictMode>
 );

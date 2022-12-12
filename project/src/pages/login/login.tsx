@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import LoginForm from '../../components/login-form/login-form';
 import Logo from '../../components/logo/logo';
+import { AppRoute } from '../../consts/app';
 import { DEFAULT_CITY_INDEX, cities, LAST_CITY_INDEX } from '../../consts/city';
 import { useAppDispatch } from '../../hooks';
 import { changeCity } from '../../store/offers-data/offers-data';
@@ -41,9 +43,9 @@ const Login = () => {
           </section>
           <section className="locations locations--login locations--current">
             <div className="locations__item">
-              <a className="locations__item-link" href="#">
+              <Link className="locations__item-link" to={AppRoute.Main} data-testid="city">
                 <span>{city.name}</span>
-              </a>
+              </Link>
             </div>
           </section>
         </div>

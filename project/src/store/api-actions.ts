@@ -7,7 +7,7 @@ import { AuthData } from '../types/auth';
 import { Offer, Offers } from '../types/offers';
 import { ReviewData, Reviews } from '../types/reviews';
 import { AppDispatch, State } from '../types/state';
-import { User } from '../types/user';
+import { AuthUser } from '../types/user';
 import { redirectToRoute } from './actions';
 
 export const fetchOffersAction = createAsyncThunk<Offers, undefined, {
@@ -70,26 +70,26 @@ export const fetchOffersNearbyAction = createAsyncThunk<Offers, number, {
   }
 );
 
-export const checkAuthAction = createAsyncThunk<User, undefined, {
+export const checkAuthAction = createAsyncThunk<AuthUser, undefined, {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
 }>(
   'user/checkAuth',
   async (_arg, { dispatch, extra: api}) => {
-    const { data } = await api.get<User>(APIRoute.Login);
+    const { data } = await api.get<AuthUser>(APIRoute.Login);
     return data;
   },
 );
 
-export const loginAction = createAsyncThunk<User, AuthData, {
+export const loginAction = createAsyncThunk<AuthUser, AuthData, {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
 }>(
   'user/login',
   async ({ login: email, password }, { dispatch, extra: api}) => {
-    const { data: userData } = await api.post<User>(APIRoute.Login, { email, password });
+    const { data: userData } = await api.post<AuthUser>(APIRoute.Login, { email, password });
     saveToken(userData.token);
     dispatch(redirectToRoute(AppRoute.Main));
 

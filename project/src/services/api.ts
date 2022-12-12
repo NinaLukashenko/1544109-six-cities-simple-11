@@ -5,7 +5,6 @@ import { getToken } from './token';
 
 const StatusCodeMapping: Record<number, boolean> = {
   [StatusCodes.BAD_REQUEST]: true, //400
-  [StatusCodes.UNAUTHORIZED]: true, //401
   [StatusCodes.NOT_FOUND]: true //404
 };
 

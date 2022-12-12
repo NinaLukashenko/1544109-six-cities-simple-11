@@ -12,7 +12,7 @@ const CityOfferMap = (props: CityOfferMapProps): JSX.Element => {
   const hoveredOffer = useAppSelector(getHoveredOffer);
 
   return (
-    <div className="cities__right-section">
+    <div className="cities__right-section" data-testid="map-wrapper">
       <Map
         selectedPoint={hoveredOffer}
         {...props}

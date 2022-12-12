@@ -26,8 +26,13 @@ const Sort = (): JSX.Element => {
 
   return (
     <form className="places__sorting" action="#" method="get">
-      <span className="places__sorting-caption">Sort by</span>
-      <span className="places__sorting-type" tabIndex={0} onClick={handleSortByClick}>
+      <span className="places__sorting-caption">Sort by </span>
+      <span
+        className="places__sorting-type"
+        tabIndex={0}
+        data-testid="selected-option"
+        onClick={handleSortByClick}
+      >
         {selectedOption}
         <svg className="places__sorting-arrow" width="7" height="4">
           <use xlinkHref="#icon-arrow-select"></use>
@@ -35,6 +40,7 @@ const Sort = (): JSX.Element => {
       </span>
       <ul
         className={`places__options places__options--custom ${isOpen ? 'places__options--opened' : ''}`}
+        data-testid="sort-options"
         onClick={handleSortOptionSelect}
       > {sortOptions.map((option) => (
           <li

@@ -54,6 +54,7 @@ const Map = ({ city, points, selectedPoint }: MapProps): JSX.Element => {
       ref={mapRef}
       className="cities__map map"
       style={{ height: '100%' }}
+      data-testid="map"
     >
     </section>
   );

@@ -1,13 +1,13 @@
 import { MouseEvent } from 'react';
 import { useAppDispatch } from '../../hooks';
 import { logoutAction } from '../../store/api-actions';
-import { User } from '../../types/user';
+import { AuthUser } from '../../types/user';
 
-type HeaderNavAuthProps = {
-  user: User;
+type NavAuthProps = {
+  user: AuthUser;
 }
 
-const HeaderNavAuth = ({ user: { email } }: HeaderNavAuthProps): JSX.Element => {
+const NavAuth = ({ user: { email } }: NavAuthProps): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const handleSignoutClick = (evt: MouseEvent<HTMLAnchorElement>) => {
@@ -38,4 +38,4 @@ const HeaderNavAuth = ({ user: { email } }: HeaderNavAuthProps): JSX.Element => 
   );
 };
 
-export default HeaderNavAuth;
+export default NavAuth;
