@@ -7,7 +7,7 @@ import { store } from './store';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { checkAuthAction, fetchOffersAction } from './store/api-actions';
-import HistoryRouter from './components/history-route/history-route';
+import HistoryRouter from './components/history-router/history-router';
 import browserHistory from './browser-history';
 
 store.dispatch(fetchOffersAction());

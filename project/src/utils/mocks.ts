@@ -56,7 +56,7 @@ export const makeFakeOffer = (id: number, cityIndex?: number): Offer => ({
   previewImage: '/img_1.jpeg',
   price: datatype.number(300),
   rating: datatype.number(5),
-  title: lorem.word(5) + lorem.word(10) + lorem.word(25),
+  title: lorem.word(15) + lorem.word(10) + lorem.word(5),
   type: OfferType.Hotel,
 });
 

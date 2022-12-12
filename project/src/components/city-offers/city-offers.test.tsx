@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { DEFAULT_CITY, DEFAULT_CITY_INDEX } from '../../consts/city';
 import { DEFAULT_SORT_OPTION } from '../../consts/sort';
 import { makeFakeOffer } from '../../utils/mocks';
-import HistoryRouter from '../history-route/history-route';
+import HistoryRouter from '../history-router/history-router';
 import CityOffers from './city-offers';
 
 const middlewares = [thunk];

@@ -4,7 +4,7 @@ import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import { AuthorizationStatus } from '../../consts/app';
 import { makeFakeUserData } from '../../utils/mocks';
-import HistoryRouter from '../history-route/history-route';
+import HistoryRouter from '../history-router/history-router';
 import Header from './header';
 
 const mockStore = configureMockStore();

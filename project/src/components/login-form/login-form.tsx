@@ -2,7 +2,7 @@ import { FormEvent, useRef } from 'react';
 import { useAppDispatch } from '../../hooks';
 import { loginAction } from '../../store/api-actions';
 import { Nullable } from '../../types/utils';
-import { isNotEmpty } from '../../utils/utils';
+import { isNotEmpty, isPasswordValid } from '../../utils/utils';
 
 const LoginForm = () => {
   const loginRef = useRef<Nullable<HTMLInputElement>>(null);
@@ -14,7 +14,7 @@ const LoginForm = () => {
     evt.preventDefault();
 
     if (loginRef.current !== null && passwordRef.current !== null) {
-      if (isNotEmpty(loginRef.current.value) && isNotEmpty(passwordRef.current.value)) {
+      if (isNotEmpty(loginRef.current.value) && isPasswordValid(passwordRef.current.value)) {
         const authData = {
           login: loginRef.current.value,
           password: passwordRef.current.value,
