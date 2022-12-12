@@ -4,7 +4,7 @@ import { createMemoryHistory } from 'history';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import HistoryRouter from '../../components/history-route/history-route';
+import HistoryRouter from '../../components/history-router/history-router';
 import { AppRoute, AuthorizationStatus } from '../../consts/app';
 import { makeFakeComments, makeFakeOffer } from '../../utils/mocks';
 import Room from './room';

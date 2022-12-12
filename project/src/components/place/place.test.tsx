@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { makeFakeOffer } from '../../utils/mocks';
 import Place from './place';
 import userEvent from '@testing-library/user-event';
-import HistoryRouter from '../history-route/history-route';
+import HistoryRouter from '../history-router/history-router';
 import { createMemoryHistory } from 'history';
 import { Route, Routes } from 'react-router-dom';
 import { AppRoute } from '../../consts/app';

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
-import HistoryRouter from '../../components/history-route/history-route';
+import HistoryRouter from '../../components/history-router/history-router';
 import { AuthorizationStatus } from '../../consts/app';
 import { DEFAULT_CITY_INDEX } from '../../consts/city';
 import { DEFAULT_SORT_OPTION } from '../../consts/sort';

@@ -5,7 +5,7 @@ import { AppRoute, AuthorizationStatus } from '../../consts/app';
 import { DEFAULT_CITY } from '../../consts/city';
 import { DEFAULT_SORT_OPTION } from '../../consts/sort';
 import { makeFakeComments, makeFakeOffer, makeFakeOffers } from '../../utils/mocks';
-import HistoryRouter from '../history-route/history-route';
+import HistoryRouter from '../history-router/history-router';
 import App from './app';
 import { render, screen } from '@testing-library/react';
 import thunk from 'redux-thunk';

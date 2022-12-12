@@ -4,7 +4,7 @@ import { createMemoryHistory } from 'history';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import HistoryRouter from '../../components/history-route/history-route';
+import HistoryRouter from '../../components/history-router/history-router';
 import { AppRoute } from '../../consts/app';
 import Login from './login';
 import userEvent from '@testing-library/user-event';

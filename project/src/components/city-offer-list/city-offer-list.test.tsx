@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { SortOption } from '../../consts/sort';
 import { makeFakeOffers } from '../../utils/mocks';
-import HistoryRouter from '../history-route/history-route';
+import HistoryRouter from '../history-router/history-router';
 import CityOfferList from './city-offer-list';
 
 const middlewares = [thunk];

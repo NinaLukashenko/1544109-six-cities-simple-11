@@ -44,3 +44,8 @@ export const starRates: StarRates = [
     title: 'perfect',
   },
 ];
+
+export enum CommentLength {
+  Minimum = 50,
+  Maxsimum = 300,
+}
